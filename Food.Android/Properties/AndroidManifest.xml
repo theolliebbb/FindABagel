@@ -8,7 +8,7 @@
 	</queries>
 	<uses-sdk android:minSdkVersion="21" android:targetSdkVersion="30" />
 	<application android:label="Food.Android" android:theme="@style/MainTheme" android:icon="@drawable/icon">
-		<meta-data android:name="com.google.android.geo.API_KEY" android:value="AIzaSyDaHhgnxRUkv4kFUaS8mqJmr3WI3ijyF4c" />
+		<meta-data android:name="com.google.android.geo.API_KEY" android:value="XXX" />
 		<meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version" />
 		<uses-library android:name="org.apache.http.legacy" android:required="false" />
 	</application>
