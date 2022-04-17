@@ -1,0 +1,48 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2012" />  
+    <PackageReference Include="Xamarin.Essentials" Version="1.6.1" />
+    <PackageReference Include="Xamarin.Forms.PancakeView" Version="2.3.0.759" />
+    <PackageReference Include="Xamarin.Forms.Maps" Version="4.8.0.1534" />
+    <PackageReference Include="HtmlAgilityPack" Version="1.11.42" />
+    <PackageReference Include="GoogleApi" Version="4.0.7" />
+    <PackageReference Include="sqlite-net-pcl" Version="1.8.116" />
+    <PackageReference Include="Refractored.MvvmHelpers" Version="1.6.2" />
+    <PackageReference Include="Xamarin.CommunityToolkit" Version="1.2.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="ViewModels\" />
+    <None Remove="Services\" />
+    <None Remove="Models\" />
+    <None Remove="Views\" />
+    <None Remove="Xamarin.Forms.PancakeView" />
+    <None Remove="Xamarin.Forms.Maps" />
+    <None Remove="HtmlAgilityPack" />
+    <None Remove="GoogleApi" />
+    <None Remove="sqlite-net-pcl" />
+    <None Remove="Refractored.MvvmHelpers" />
+    <None Remove="toastr" />
+    <None Remove="Toasts.Forms.Plugin" />
+    <None Remove="Xamarin.CommunityToolkit" />
+    <None Remove="Aurella.ttf" />
+    <None Remove="OpenSans-VariableFont_wdth,wght.ttf" />
+    <None Remove="GrapeNuts-Regular.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ViewModels\" />
+    <Folder Include="Services\" />
+    <Folder Include="Models\" />
+    <Folder Include="Views\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Aurella.ttf" />
+    <EmbeddedResource Include="OpenSans-VariableFont_wdth,wght.ttf" />
+    <EmbeddedResource Include="GrapeNuts-Regular.ttf" />
+  </ItemGroup>
+</Project>

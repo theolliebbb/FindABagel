@@ -1,0 +1,172 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:viewmodels="clr-namespace:Food.ViewModels"
+    xmlns:mvvm="clr-namespace:MvvmHelpers;assembly=MvvmHelpers"
+    xmlns:model="clr-namespace:Food.Models"
+    xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+    x:DataType="viewmodels:FoodViewModel"
+    x:Class="Food.Views.Saved"
+    x:Name="ListPage">
+        <ContentPage.BindingContext>
+        <viewmodels:FoodViewModel />
+    </ContentPage.BindingContext>
+       <ContentPage.ToolbarItems>
+        
+       
+        
+        <ToolbarItem Text="Clear" Command="{Binding ClearCommand}"/>
+        <ToolbarItem Text="Refresh" Command="{Binding RefreshCommand}"/>
+        
+
+    </ContentPage.ToolbarItems>
+<ContentPage.Content>
+ 
+        <Grid HorizontalOptions="FillAndExpand" RowDefinitions="*, 2*, Auto">
+        <BoxView Grid.RowSpan="3">
+            <BoxView.Background>
+                <LinearGradientBrush>
+                    <GradientStopCollection>
+                        <GradientStop Color="#2A4078" Offset="0"/>
+                        <GradientStop  Color="#20234C" Offset="1"/>
+                    </GradientStopCollection>
+                </LinearGradientBrush>
+            </BoxView.Background>
+        </BoxView>
+        <Grid>
+            <Path Data="m13.50022,32.01253l386.99976,0l0,291.19995l-193.50001,72.80007l-193.49997,-72.80007l0.00022,-291.19995z"
+               Aspect="Fill"  HorizontalOptions="FillAndExpand"  >
+                   <Path.Fill>
+         <LinearGradientBrush>
+                    <GradientStopCollection>
+                     <GradientStop Color="#FF9709" Offset="0"/>
+                        <GradientStop Color="#DA7A09" Offset="1"/>
+                    </GradientStopCollection>
+                </LinearGradientBrush>
+        </Path.Fill>
+                </Path>
+            <Label Text="User DB" FontFamily="gra" VerticalOptions="StartAndExpand" FontSize="50" TextColor="White" HorizontalOptions="Center"/>
+        </Grid>
+        <StackLayout  Grid.Row="1" HorizontalOptions="FillAndExpand" Margin="0,-140,0,0" Spacing="30">
+            <Grid HeightRequest="350" WidthRequest="350" HorizontalOptions="Center">
+                
+                <Image x:Name="BannerImg" Source="bagel.png" HeightRequest="350" WidthRequest="350" HorizontalOptions="Center"
+                    VerticalOptions="Center" />
+            </Grid>
+            <ScrollView HorizontalOptions="FillAndExpand">
+            <StackLayout HorizontalOptions="Center" Spacing="15">
+                 <CarouselView
+        x:Name="List"
+        
+        Grid.ColumnSpan="10"
+        BackgroundColor="Transparent"
+        PeekAreaInsets="50"
+        HorizontalOptions="FillAndExpand"
+        ItemsSource="{Binding Food}"
+        Loop="False"
+       
+        
+       >
+                    
+                         
+                       
+                     <CarouselView.ItemTemplate>
+            <DataTemplate  x:DataType="model:LocalResult2" >
+                
+               <Frame HorizontalOptions="FillAndExpand" BorderColor="Orange" BackgroundColor="Transparent">
+                   <ScrollView HorizontalOptions="FillAndExpand">
+                    
+                        <StackLayout HorizontalOptions="FillAndExpand" Orientation="Vertical" Margin="5">
+                       
+                            <Image x:Name="image"  HeightRequest="100" WidthRequest="100" Source="{Binding thumbnail}"/>
+                            <Button
+                            FontFamily="open"
+                                        FontSize="Large"
+                                        Text="{Binding title}"
+                                HorizontalOptions="FillAndExpand"
+                            TextColor="White"
+                            
+                            Clicked="Button_Clicked2"
+                                        VerticalOptions="Center" />
+                           
+                            <Label
+                            FontFamily="open"
+                                        FontSize="Large"
+                                        Text="{Binding address}"
+                            TextColor="White"
+                            BackgroundColor="Transparent"
+                            HorizontalTextAlignment="Center"
+                                HorizontalOptions="CenterAndExpand"
+                                        VerticalTextAlignment="Center"
+                                        VerticalOptions="Center" />
+                           
+                            <Label
+                            FontFamily="open"
+                                        FontSize="Large"
+                                        Text="{Binding hours}"
+                            TextColor="White"
+                            BackgroundColor="Transparent"
+                            HorizontalTextAlignment="Center"
+                                        VerticalTextAlignment="Center"
+                                        VerticalOptions="Center" />
+                            <Label
+                            FontFamily="open"
+                                        FontSize="Large"
+                                        Text="{Binding description}"
+                            TextColor="White"
+                            BackgroundColor="Transparent"
+                            HorizontalTextAlignment="Center"
+                                        VerticalTextAlignment="Center"
+                                        VerticalOptions="Center" />
+                            
+                            <Button  FontSize="Large"
+                                     FontFamily="open"
+                                        Text="{Binding phone}"
+                                     Clicked="Button_Clicked"
+                            TextColor="White"
+                           
+                                        VerticalOptions="Center" />
+                            <Button
+                            FontFamily="open"
+                                        FontSize="Large"
+                                        Text="{Binding website}"
+                                Clicked="Button_Clicked3"
+                            TextColor="White"
+                            
+                            
+                                        VerticalOptions="Center" />
+                            <Button
+                            FontFamily="open"
+                                        FontSize="Large"
+                                        Text="Delete"
+                                
+                                
+                            TextColor="White"
+                            Command="{Binding Source={x:Reference ListPage}, Path=BindingContext.RemoveCommand}"
+                            CommandParameter="{Binding .}"
+                                        VerticalOptions="Center" />
+                            <Button
+                            FontFamily="open"
+                                        FontSize="Large"
+                                        Text="Get Directions"
+                                Clicked="Navigate"
+                            TextColor="White"
+                            
+                            
+                                        VerticalOptions="Center" />
+                            </StackLayout>
+                      </ScrollView>
+                    </Frame>
+                </DataTemplate>
+                         </CarouselView.ItemTemplate>
+                 </CarouselView>
+            </StackLayout>
+                </ScrollView>
+            <ActivityIndicator x:Name="activity" Color="White"  Scale=".5" VerticalOptions="Center" HorizontalOptions="Center"
+               />
+             
+        </StackLayout>
+        <Image Source="bagelspin" Scale=".2" x:Name="bagelspin" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" IsVisible="False"/>
+    </Grid>
+    </ContentPage.Content>
+</ContentPage>

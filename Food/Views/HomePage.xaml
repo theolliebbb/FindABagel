@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="Food.Views.HomePage">
+     
+    <ContentPage.Content>
+       
+        <Grid RowDefinitions="*, 2*, Auto">
+           
+        <BoxView Grid.RowSpan="3">
+            <BoxView.Background>
+                <LinearGradientBrush>
+                    <GradientStopCollection>
+                     <GradientStop Color="#2A4078" Offset="0"/>
+                        <GradientStop  Color="#20234C" Offset="1"/>
+                    </GradientStopCollection>
+                </LinearGradientBrush>
+            </BoxView.Background>
+        </BoxView>
+        <Grid>
+           
+            <Path Data="m13.50022,32.01253l386.99976,0l0,291.19995l-193.50001,72.80007l-193.49997,-72.80007l0.00022,-291.19995z"
+               Aspect="Fill"  HorizontalOptions="FillAndExpand"  >
+                   <Path.Fill>
+         <LinearGradientBrush>
+                    <GradientStopCollection>
+                     <GradientStop Color="#FF9709" Offset="0"/>
+                        <GradientStop Color="#DA7A09" Offset="1"/>
+                    </GradientStopCollection>
+                </LinearGradientBrush>
+        </Path.Fill>
+               
+                </Path>
+             <Label Text="Find A Bagel" FontFamily="gra" VerticalOptions="StartAndExpand" FontSize="50" TextColor="White" HorizontalOptions="Center"/>
+            <Image Source="menu.png" WidthRequest="20" HeightRequest="20" HorizontalOptions="Start" VerticalOptions="Start" Margin="25"/>
+            <Image Source="search.png" WidthRequest="20" HeightRequest="20" HorizontalOptions="End" VerticalOptions="Start" Margin="25"/>
+        </Grid>
+        <StackLayout Grid.Row="1" HorizontalOptions="Center" Margin="0,-140,0,0" Spacing="14">
+            
+            <Grid HeightRequest="160" WidthRequest="160" HorizontalOptions="Center">
+                
+                <Image x:Name="BannerImg" Source="bagel.png" HeightRequest="160" WidthRequest="160" HorizontalOptions="Center"
+                    VerticalOptions="Center" />
+            </Grid>
+            <StackLayout HorizontalOptions="Center" Spacing="15">
+              
+                <Label FontFamily="gra" Text="Where can I find" TextColor="White" FontAttributes="Bold" FontSize="25"  HorizontalOptions="Center"/>
+                
+                <Picker HorizontalOptions="CenterAndExpand" FontFamily="gra" FontSize="25" HorizontalTextAlignment="Center" x:Name="foodpic"  ItemDisplayBinding="{Binding Name}" TabIndex="1" TextColor="White"/>
+                <Label FontSize="25"  Text="in" FontFamily="gra" TextColor="White" HorizontalOptions="Center" />
+                <Picker  FontFamily="gra" FontSize="25" HorizontalTextAlignment="Center" x:Name="locpic" ItemDisplayBinding="{Binding Name}" TabIndex="1" TextColor="White"/>
+               <Label FontSize="25" FontFamily="gra" Text="?" TextColor="White" HorizontalOptions="Center" />
+                 
+                <Button FontFamily="open"  x:Name="gomap" Text="Let's see!" TextColor="White" WidthRequest="150" HeightRequest="46" 
+                    CornerRadius="23" HorizontalOptions="Center" Clicked="Button_Clicked5"/>
+
+                <Button  x:Name="godb" Text="User DB" TextColor="White"  WidthRequest="150" HeightRequest="46" FontFamily="open"
+                    CornerRadius="23" HorizontalOptions="Center" Clicked="Button_Clicked2"/>
+                
+            </StackLayout>
+            
+        </StackLayout>
+         <ActivityIndicator x:Name="activity" Color="White"  Scale="1" VerticalOptions="End" HorizontalOptions="Center"
+               />
+           <Image Source="bagelspin" Scale=".2" x:Name="bagelspin" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" IsVisible="False"/>
+    </Grid>
+      
+    </ContentPage.Content>
+     
+</ContentPage>

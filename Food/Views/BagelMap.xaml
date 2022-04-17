@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="Food.Views.BagelMap"
+    xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps">
+    <ContentPage.Content>
+     
+           <Grid RowDefinitions="*, *" BackgroundColor="Black" ColumnDefinitions="*">
+           
+               <Frame  HasShadow="True"  Padding="1" >
+                   <Frame.Background>
+                       <LinearGradientBrush>
+                    <GradientStopCollection>
+                        <GradientStop Color="White" Offset="0"/>
+                        <GradientStop  Color="GhostWhite" Offset="1"/>
+                    </GradientStopCollection>
+                </LinearGradientBrush>
+                   </Frame.Background>
+                   <ScrollView VerticalScrollBarVisibility="Always" >
+           <StackLayout Grid.Row="0" Spacing="10">
+               <StackLayout.Background>
+                   <LinearGradientBrush>
+                    <GradientStopCollection>
+                        <GradientStop Color="#2A4078" Offset="0"/>
+                        <GradientStop  Color="#20234C" Offset="1"/>
+                    </GradientStopCollection>
+                </LinearGradientBrush>
+               </StackLayout.Background>
+          <Path Data="m-0.49978,0l415.99977,0l0,47.99999l-208.00003,12.00001l-207.99998,-12.00001l0.00024,-47.99999z"
+               Aspect="Fill"  HorizontalOptions="FillAndExpand"  >
+                   <Path.Fill>
+         <LinearGradientBrush>
+                    <GradientStopCollection>
+                        <GradientStop Color="#FF9709" Offset="0"/>
+                        <GradientStop Color="#DA7A09" Offset="1"/>
+                    </GradientStopCollection>
+                </LinearGradientBrush>
+                       </Path.Fill>
+                   </Path>
+               <Label/>
+               <Label FontFamily="open"  FontAttributes="Bold" VerticalOptions="CenterAndExpand" FontSize="20" TextColor="White" HorizontalTextAlignment="Center" HorizontalOptions="CenterAndExpand" x:Name="title" />
+                  <Label Margin="5" FontFamily="gra" FontAttributes="Bold" FontSize="20" TextColor="White" HorizontalTextAlignment="Center" HorizontalOptions="CenterAndExpand" x:Name="address" Text="Select a Store to Get the Location and Save Options!!"/>
+               <Label  FontAttributes="Bold" FontFamily="open" FontSize="20" TextColor="White" HorizontalTextAlignment="Center" HorizontalOptions="CenterAndExpand" x:Name="rating" />
+               <Label FontFamily="open"  FontAttributes="Bold" FontSize="20" TextColor="White" HorizontalTextAlignment="Center" HorizontalOptions="CenterAndExpand" x:Name="price" />
+               <Label  FontFamily="open" FontAttributes="Bold" FontSize="20" TextColor="White" HorizontalTextAlignment="Center" HorizontalOptions="CenterAndExpand" x:Name="hours"/>
+               <Label  FontFamily="open" FontAttributes="Bold" FontSize="20" TextColor="White" HorizontalTextAlignment="Center" HorizontalOptions="CenterAndExpand" x:Name="description"/>
+               <Frame BorderColor="White" BackgroundColor="Transparent">
+               <Image x:Name="image" HeightRequest="300" HorizontalOptions="FillAndExpand"/>
+                   </Frame>
+               <Button FontFamily="open" FontAttributes="Bold" FontSize="20" TextColor="White"  BackgroundColor="Transparent" Clicked="phone_Clicked" HorizontalOptions="CenterAndExpand" x:Name="phone"/>
+              <Button FontFamily="open" x:Name="save"  IsVisible="False" Text="Save Selection" FontAttributes="Bold" FontSize="20" TextColor="White" BackgroundColor="Transparent" Clicked="save_Clicked" HorizontalOptions="Center" VerticalOptions="Center"/>
+                 <Button FontFamily="open" x:Name="nav"  IsVisible="False" Text="Get Directions" FontAttributes="Bold" FontSize="20" TextColor="White" BackgroundColor="Transparent" Clicked="Navigate" HorizontalOptions="Center" VerticalOptions="Center"/>          
+            </StackLayout>
+                        </ScrollView>
+                   </Frame>
+
+        <maps:Map Grid.Row="1" Grid.Column="0" x:Name="map"  MinimumHeightRequest="800" MinimumWidthRequest="800" MapType="Street" IsShowingUser="True" VerticalOptions="FillAndExpand"  HorizontalOptions="FillAndExpand"
+           >
+            
+            <x:Arguments>
+                <maps:MapSpan x:Name="span">
+                    <x:Arguments>
+
+                        <maps:Position x:Name="position">
+                            <x:Arguments>
+                               
+                                <x:Double>35.6804</x:Double>
+                                <x:Double>139.7690 </x:Double>
+                            </x:Arguments>
+                        </maps:Position>
+                        <x:Double>0.01</x:Double>
+                        <x:Double>0.01</x:Double>
+                    </x:Arguments>
+                </maps:MapSpan>
+            </x:Arguments>
+            <maps:Map.Background>
+                 <LinearGradientBrush>
+                    <GradientStopCollection>
+                        <GradientStop Color="#2A4078" Offset="0"/>
+                        <GradientStop  Color="#3639A0" Offset="1"/>
+                    </GradientStopCollection>
+                </LinearGradientBrush>
+            </maps:Map.Background>
+            </maps:Map>
+            
+       
+    </Grid>
+ 
+    </ContentPage.Content>
+</ContentPage>
