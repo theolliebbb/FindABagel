@@ -14,9 +14,10 @@
  - Can call a phone number in native App
  - Json Deserialization
  - Consumes Google Maps API
+ - Consumes API and gives map markers based on picker selection
 
 
- <img width="412" alt="Screen Shot 2022-04-17 at 12 22 54 PM" src="https://user-images.githubusercontent.com/100133514/163699345-1a4970f7-8a97-4b73-ad66-c35c4f0f7cd1.png">
+<img width="414" alt="Screen Shot 2022-04-17 at 12 45 51 PM" src="https://user-images.githubusercontent.com/100133514/163699454-e1046362-5bf7-4ce6-8ec9-e9b81698866e.png">
 <img width="415" alt="Screen Shot 2022-04-17 at 12 22 40 PM" src="https://user-images.githubusercontent.com/100133514/163699346-029c7683-ef93-43b6-80bb-30e564be6ada.png">
 <img width="417" alt="Screen Shot 2022-04-17 at 12 23 29 PM" src="https://user-images.githubusercontent.com/100133514/163699349-b45016df-9cc7-45d5-b81e-eb5c0e63c640.png">
 <img width="411" alt="Screen Shot 2022-04-17 at 12 23 37 PM" src="https://user-images.githubusercontent.com/100133514/163699350-0b6e3743-dd24-4a79-83d0-bf209b77eaaa.png">
