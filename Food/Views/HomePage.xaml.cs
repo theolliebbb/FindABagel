@@ -54,7 +54,7 @@ namespace Food.Views
         async void Button_Clicked(Object sender, EventArgs e)
         {
             var httpClient = new HttpClient();
-            var resultJson3 = await httpClient.GetStringAsync("https://serpapi.com/search.json?engine=google_maps&q=ベーグル東京&ll=%4040.7455096%2C-74.0083012%2C15.1z&type=search&api_key=7680d1b19169c265147e6bdda14de8a9c82e6ac3a8e6fa6434e72a2d59abfba1");
+            var resultJson3 = await httpClient.GetStringAsync("https://serpapi.com/search.json?engine=google_maps&q=ベーグル東京&ll=%4040.7455096%2C-74.0083012%2C15.1z&type=search&api_key=XXX");
             var resultBig = JsonConvert.DeserializeObject<Models.Root>(resultJson3);
             var details = resultBig;
             await Navigation.PushAsync(new BagelMap(details));
@@ -62,7 +62,7 @@ namespace Food.Views
         async void Button_Clicked3(Object sender, EventArgs e)
         {
             var httpClient = new HttpClient();
-            var resultJson3 = await httpClient.GetStringAsync("https://serpapi.com/search.json?engine=google_maps&q=メキシカン東京&ll=%4040.7455096%2C-74.0083012%2C15.1z&type=search&api_key=7680d1b19169c265147e6bdda14de8a9c82e6ac3a8e6fa6434e72a2d59abfba1");
+            var resultJson3 = await httpClient.GetStringAsync("https://serpapi.com/search.json?engine=google_maps&q=メキシカン東京&ll=%4040.7455096%2C-74.0083012%2C15.1z&type=search&api_key=XXX");
             var resultBig = JsonConvert.DeserializeObject<Models.Root>(resultJson3);
             var details = resultBig;
             await Navigation.PushAsync(new BagelMap(details));
@@ -70,7 +70,7 @@ namespace Food.Views
         async void Button_Clicked4(Object sender, EventArgs e)
         {
             var httpClient = new HttpClient();
-            var resultJson3 = await httpClient.GetStringAsync("https://serpapi.com/search.json?engine=google_maps&q=クラフトビール東京&ll=%4040.7455096%2C-74.0083012%2C15.1z&type=search&api_key=7680d1b19169c265147e6bdda14de8a9c82e6ac3a8e6fa6434e72a2d59abfba1");
+            var resultJson3 = await httpClient.GetStringAsync("https://serpapi.com/search.json?engine=google_maps&q=クラフトビール東京&ll=%4040.7455096%2C-74.0083012%2C15.1z&type=search&api_key=XXX");
             var resultBig = JsonConvert.DeserializeObject<Models.Root>(resultJson3);
             var details = resultBig;
             await Navigation.PushAsync(new BagelMap(details));
@@ -90,7 +90,7 @@ namespace Food.Views
             Debug.WriteLine(string1);
             var httpClient = new HttpClient();
             var url1 = "https://serpapi.com/search.json?engine=google_maps&q=";
-            var url2 = "&ll=%4040.7455096%2C-74.0083012%2C15.1z&type=search&api_key=7680d1b19169c265147e6bdda14de8a9c82e6ac3a8e6fa6434e72a2d59abfba1";
+            var url2 = "&ll=%4040.7455096%2C-74.0083012%2C15.1z&type=search&api_key=XXX";
             string resultJson3;
             Root resultBig = new Root();
             try
